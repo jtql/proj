@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Register</title>
+<link rel="stylesheet" type="text/css" href="css/register.css">
+    
+</head>
+<body>
+	<div class="main">
+		<header>
+			<a href="home.html"><img src="img/home-icon.png" id="homeicon"></a>
+			<a href="index.html" id="signIn">Sign In</a>
+		</header>
+		<div class="login">
+			
+			<div id="register_form">
+				<h2>&nbsp Register</h2>
+				<form action="RegisterServlet" method="post" onsubmit="checkPass()">
+					<br>
+					<input id="fname" type="text" name="firstName" placeholder="First Name" class="ip" required> 
+					<i id="ph_img" class="fa fa-user" style="font-size:1em"></i>
+					<br> <br>
+					
+					<input id="lname" type="text" name="lastName" placeholder="Last Name" class="ip" required> 
+					<i id="ph_img" class="fa fa-user" style="font-size:1em"></i>
+					<br> <br>
+					
+					<input id="name" type="text" name="userId" placeholder="Username" class="ip" minlength="8" required> 
+					<i id="ph_img" class="fa fa-user" style="font-size:1em"></i>
+					<br> <br>
+					
+					<input id="psw" type="password" name="userpass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="ip" minlength="8" required> 
+					<i id="ph_img" class="fa fa-lock" style="font-size:1em"></i>
+					<br> <br>
+                    
+                    <input id="cpsw" type="password" name="cuserpass" placeholder="Confirm Password" class="ip" minlength="8" required> 
+					<i id="ph_img" class="fa fa-lock" style="font-size:1em" onchange="confirmPass()"></i>
+					<br> <br>
+                    
+                    <input id="email" type="text" name="email" placeholder="E-mail" class="ip" minlength="8" required> 
+					<i id="ph_img" class="fa fa-lock" style="font-size:1em"></i>
+					<br> <br>
+                    
+                    <input id="cemail" type="text" name="cemail" placeholder="Confirm E-mail" class="ip" required> 
+					<i id="ph_img" class="fa fa-lock" style="font-size:1em"></i>
+					<br> <br>
+					
+					<input id="address" type="text" name="add" placeholder="Address" class="ip" required> 
+					<i id="ph_img" class="fa fa-user" style="font-size:1em"></i>
+					<br> <br>
+					
+					<input id="country" type="text" name="country" placeholder="Country" class="ip" required> 
+					<i id="ph_img" class="fa fa-user" style="font-size:1em"></i>
+					<br> <br>
+					
+					<p class="submit"><input id="submit_button" type="submit" name="commit" value="Register"></p>
+					
+				</form>
+				<br> <br>
+			<p id="err_msg">&nbsp </p>
+		</div>
+		<h2>&nbsp</h2>
+	</div>
+	<footer>
+		<hr>
+
+		<div class="footing">
+			<div id="foot_info">
+				<p> © 2019 BagsForYou.com All rights reserved.</p>
+			</div>
+		</div>
+        <script type="text/javascript"> document.getElementById("cpsw").addEventListener("keyup", confirmPass);
+        function confirmPass(){
+            var pass = document.getElementById("psw");
+            var cpass = document.getElementById("cpsw");
+            console.log("hi");
+            if(pass.value != cpass.value) {
+                cpass.style.border = "2px solid red"; document.getElementById("submit_button");
+            } 
+        };
+        function checkPass(){
+            var pass = document.getElementById("psw");
+            var cpass = document.getElementById("cpsw");
+            if(pass.value != cpass.value) {
+                alert("Passwords do not match!");
+               return false;
+            } 
+        }
+
+	</script>
+	</footer>
+	</div>	
+
+</body>
+</html>

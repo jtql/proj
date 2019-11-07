@@ -1,0 +1,56 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/loginStyles.css">
+</head>
+<body>
+	
+	<div class="main">
+		<header><a href="home.html"><img src="img/home-icon.png" id="homeicon"></a></header>
+	<div class="login">
+			
+			<div id="register_form">
+				<h2>&nbsp Login</h2>
+				<form action="LoginServlet" method="post">
+					<br>
+					<input id="name" type="text" name="username" placeholder="Username" class="ip" onfocus="hideIcon(this)" onblur="recoverIcon(this)" minlength="8" required> 
+					<i id="ph_img" class="fa fa-user" style="font-size:1em"></i>
+					<br> <br>
+					
+					<input id="psw" type="password" name="userpass" placeholder="Password" class="ip" onfocus="hideIcon(this)" onblur="recoverIcon(this)" minlength="8" required> 
+					<i id="ph_img" class="fa fa-lock" style="font-size:1em"></i>
+					<br> <br>
+					
+					<p class="remember_me">
+						<label>
+							<input type="checkbox" name="rmb" id="rmb">
+							Remember me
+						</label>
+					</p>
+					<br> <br>
+					<p class="submit"><input id="submit_button" type="submit" name="commit" value="Login"></p>
+                    <p class="lostPass"> Lost your password?</p>
+                    <a href="register.html">Register</a>
+				</form>
+				<br> <br>
+			<p id="err_msg">&nbsp </p>
+		</div>
+		<h2>&nbsp</h2>
+	</div>
+	
+	<footer>
+		<hr>
+
+		<div class="footing">
+			<div id="foot_info">
+				<p> © 2019 BagsForYou.com All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+		</div>
+	
+	<script>
+		initPlaceholder();
+	</script>
+
+</body>
+</html>
